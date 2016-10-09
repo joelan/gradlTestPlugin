@@ -33,21 +33,21 @@ dependencies {
 
 
 
-buildscript {
+/*buildscript {
     repositories {
 
         jcenter()
-       /* maven {
+       *//* maven {
 
             //  本地Maven仓库地址
             url uri('../repo')
-        }*/
+        }*//*
     }
     dependencies {
         //格式为-->group:module:version
-        classpath 'com.joe.gradle.plugin:mygradleplugin:1.6.0'
+
     }
-}
+}*/
 apply plugin: 'com.joe.plugin'
 
 

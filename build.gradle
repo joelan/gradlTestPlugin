@@ -9,9 +9,17 @@ buildscript {
     dependencies {
         classpath 'com.android.tools.build:gradle:2.2.0'
 
-         classpath 'com.jfrog.bintray.gradle:gradle-bintray-plugin:1.2'
-         classpath 'com.github.dcendents:android-maven-plugin:1.2'
-        classpath 'com.joe.gradle.plugin:mygradleplugin:1.1.0'
+       classpath 'com.jfrog.bintray.gradle:gradle-bintray-plugin:1.0'
+         classpath 'com.github.dcendents:android-maven-plugin:1.0'
+
+/*
+        classpath 'com.jfrog.bintray.gradle:gradle-bintray-plugin:1.0'
+        classpath 'com.github.dcendents:android-maven-plugin:1.2'
+*/
+
+
+        //classpath 'com.joe.gradle.plugin:mygradleplugin:1.4.0'
+
     //    classpath 'com.joe.gradle.plugin:mygradleplugin:1.1.0'
 
 
@@ -23,24 +31,30 @@ buildscript {
 allprojects {
     repositories {
         jcenter()
+
+
     }
 }
 
 task clean(type: Delete) {
     delete rootProject.buildDir
 }
-/*
 
+/*
 buildscript {
     repositories {
+
+        jcenter()
         maven {
 
             //  本地Maven仓库地址
-            url uri('D:/repos')
+            url uri('../repo')
         }
+
     }
     dependencies {
         //格式为-->group:module:version
-        classpath 'com.joe.gradle.plugin:mygradleplugin:1.1.0'
+        classpath 'com.joe.gradle.plugin:mygradleplugin:1.4.0'
     }
-}*/
+}
+*/

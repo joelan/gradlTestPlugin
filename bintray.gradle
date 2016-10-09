@@ -1,5 +1,8 @@
+
 apply plugin: 'com.jfrog.bintray'
 apply plugin: 'maven-publish'
+
+
 def projectName = "gradlTestPlugin"
 def mavenDesc = 'test of gradletestplugin'
 def baseUrl = 'https://github.com/joelan'
@@ -13,7 +16,7 @@ def inception = '2016'
 def username = 'joelan'
 def emailx="joe544351900@sina.cn"
 
-def versionx="1.1.0"
+def versionx="1.6.0"
 def groupIdx="com.joe.gradle.plugin"
 
 install {
@@ -35,17 +38,16 @@ install {
                 // License
                 inceptionYear inception
                 licenses {
-                    licenseNames.eachWithIndex { ln, li ->
-                        license {
-                            name ln
-                            url licenseUrls[li]
-                        }
+                    license {
+                        name licenseNames
+                        url licenseUrls
                     }
                 }
                 developers {
                     developer {
                         id username
                         email emailx //your email
+                        name "Joelanlrq"
                     }
                 }
                 scm {
@@ -71,9 +73,18 @@ task javadocJar(type: Jar, dependsOn: groovydoc) {
 
 
 
+
+
+artifacts {
+    archives javadocJar
+    archives sourcesJar
+}
+
+
+
 bintray {
     user = "joelan"
-    key = "key"
+    key = "your key"
     configurations = ['archives']
 
 
